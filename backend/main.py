@@ -8,3 +8,9 @@ app = FastAPI(
 )
 
 app.include_router(health_router)
+
+from api.routes.test_embedding import (
+    router as embedding_router
+)
+
+app.include_router(embedding_router)
