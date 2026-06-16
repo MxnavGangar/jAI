@@ -6,6 +6,7 @@ class LLMProvider(ABC):
     @abstractmethod
     def generate(
         self,
-        prompt: str
-    ) -> str:
+        system_prompt: str,
+        user_prompt: str
+    ):
         pass

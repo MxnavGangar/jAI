@@ -14,3 +14,27 @@ from api.routes.test_embedding import (
 )
 
 app.include_router(embedding_router)
+
+from api.routes.test_retrieval import (
+    router as retrieval_router
+)
+
+app.include_router(
+    retrieval_router
+)
+
+from api.routes.ingest import (
+    router as ingest_router
+)
+
+app.include_router(
+    ingest_router
+)
+
+from api.routes.chat import (
+    router as chat_router
+)
+
+app.include_router(
+    chat_router
+)

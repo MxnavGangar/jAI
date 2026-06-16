@@ -1,23 +1,16 @@
 from core.settings import settings
 
-from providers.language_models.grok import GrokProvider
-from providers.language_models.gemini import GeminiProvider
-from providers.language_models.ollama import OllamaProvider
+from providers.language_models.groq import (
+    GroqProvider
+)
 
 
 def get_llm_provider():
 
-    provider = settings.llm_provider.lower()
-
-    if provider == "grok":
-        return GrokProvider()
-
-    elif provider == "gemini":
-        return GeminiProvider()
-
-    elif provider == "ollama":
-        return OllamaProvider()
+    if settings.llm_provider == "groq":
+        return GroqProvider()
 
     raise ValueError(
-        f"Unsupported provider: {provider}"
+        f"Unsupported LLM provider: "
+        f"{settings.llm_provider}"
     )

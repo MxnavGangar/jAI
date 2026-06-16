@@ -2,11 +2,14 @@ from pydantic_settings import BaseSettings
 
 
 class Settings(BaseSettings):
-    llm_provider: str = "grok"
-    embedding_provider: str = "bge"
-    vectorstore_provider: str = "chroma"
 
-    grok_api_key: str
+    app_name: str = "JAI Core"
+
+    llm_provider: str
+    embedding_provider: str
+    vectorstore_provider: str
+
+    groq_api_key: str
 
     class Config:
         env_file = ".env"

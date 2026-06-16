@@ -5,6 +5,7 @@ venv/
 
 # Environment
 .env
+*.env
 
 # Vector DB
 vectordb/
